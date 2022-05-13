@@ -1,0 +1,59 @@
+#!/bin/sh
+
+# Shell script to deploy application
+# dvidos@gmail.com
+
+
+# configuration area
+#-------------------------
+dev_public_folder=/home/Dimitris/public_html
+
+test_web_host=test.volax.gr
+test_web_user=volax_ftp
+test_web_password=volax_test
+test_web_folder=/var/www/volax.gr/htdocs
+
+prod_web_host=www.volax.gr
+prod_web_user=volax_ftp
+prod_web_password=1234!$%!$
+prod_web_folder=/var/www/volax.gr/htdocs
+
+
+
+
+
+
+# if not enough parameters, display help and exit
+if [ "$#" -lt 2 ]; then
+  echo "Usage: deploy <version> <environment>"
+  echo "              version   : 'current' or git tag or hash"
+  echo "              enviroment: 'dev', 'test', 'prod'"
+  exit 1
+fi
+
+
+# determine source folder and prepare it
+if [[ $1 == "current" ]]; then
+  source=`pwd`
+else
+  # checkout from git into temp folder
+fi
+
+# determine target environment
+if [[ $2 == "dev" ]]; then
+elif [[ $2 == "test" ]]; then
+elif [[ $2 == "prod" ]]; then
+fi
+
+
+# deploy 
+
+
+
+# clean up temp folder, if any
+
+
+
+
+
+
